@@ -1,56 +1,73 @@
-name: Dev Github Actions
+name: Test and create report
+
 on:
   push:
-    branches:
-      - 'githubActions'
-      - 'newLabs'
-  pull_request:
-    branches:
-      - 'githubActions'
-      - 'newLabs'
-  schedule:
-      - cron: '0 6 * * *' #daily at 9.00am EEST. #EEST = UTC + 3
+    branches: [ master ]
+  # pull_request:
+  #   branches: [ master ]
 
 jobs:
-  superuser_suit:
-      runs-on: ubuntu-20.04
-      steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
-        with:
-          node-version: '12'
-      - run: npm ci
-#      - run: npm config set script-shell "C:\Program Files\Git\bin\bash.exe"
-      - name: Run tests as test:chrome:headless:stage:superuser
-        run: npm run test:chrome:headless:stage:superuser || npm run test:chrome:headless:stage:superuser
-      - name: Generate allure-report
-        if: always()
-        run: npm run allure:generate
-      - name: Publishing Allure artifact to Github Actions
-        uses: actions/upload-artifact@v2
-        if: always()
-        with:
-          name: allure-report-superuser
-          path: allure-report
-  superuser_posts_suit:
-      runs-on: windows-2019
-      steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
-        with:
-          node-version: '12'
-      - run: npm ci
-      - run: npm config set script-shell "C:\Program Files\Git\bin\bash.exe"
-      - name: Run tests as test:chrome:headless:synchronized:stage:superuser
-        run: npm run test:chrome:headless:synchronized:stage:superuser || npm run test:chrome:headless:synchronized:stage:superuser
-      - name: Run tests as test:chrome:headless:synchronized:stage:student
-        run: npm run test:chrome:headless:synchronized:stage:student || npm run test:chrome:headless:synchronized:stage:student
-      - name: Generate allure-report
-        if: always()
-        run: npm run allure:generate
-      - name: Publishing Allure artifact to Github Actions
-        uses: actions/upload-artifact@v2
-        if: always()
-        with:
-          name: allure-report-superuser-posts
-          path: allure-report
+  Run_test:
+    runs-on: ubuntu-20.04 # Choosing OS
+    strategy:
+      matrix:
+        node-version: [14.17.0]
+        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v2
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+      # trying to install npm packages
+    - run: npm i
+    - name: run test
+      # trying to run tests
+      run: npm run test
+    - name: Copy backupHistory
+      if: always()
+      # trying to save history screens and info of previous runs if it is exists
+      run: cp -r $(pwd)/docs/backupHistory/. $(pwd)/allure-results
+    - name: Create Report
+      if: always()
+      # trying to save history of previous runs if it is exists
+      run: cp -r $(pwd)/docs/history/. $(pwd)/allure-results/history || true && npm run allure:generate
+    - name: Create bacup directory
+      if: always()
+      # trying to create backup directory
+      run: mkdir allure-report/backupHistory 
+    - name: Backup history tests
+      if: always()
+      # trying to backup screens and info test
+      run: cp -r $(pwd)/allure-results/*.* $(pwd)/allure-report/backupHistory
+    - name: Display structure of backup history files
+      if: always()
+      run: ls -R
+      working-directory: allure-report/backupHistory
+    - name: Upload artifact allure-report
+      uses: actions/upload-artifact@v1
+      if: always()
+      with:
+        name: allure-report
+        path: ./allure-report
+    - name: Deploy report
+      uses: JamesIves/github-pages-deploy-action@3.1.0
+      if: always()
+      with:
+        ACCESS_TOKEN: ${{'secrets.ACCESS_TOKEN'}}
+        BRANCH: master # The branch the action should deploy to.
+        FOLDER: allure-report # The folder the action should deploy.
+        TARGET_FOLDER: docs
+      # If your repo is private and you want upload your report to another repo uncomment and set credential 
+    # - name: Pushes to another repository
+    #   uses: cpina/github-action-push-to-another-repository@main
+    #   if: always()
+    #   env:
+    #     API_TOKEN_GITHUB: ${{ secrets.ACCESS_TOKEN }}
+    #   with:
+    #     source-directory: 'docs'
+    #     destination-github-username: 'UserName'
+    #     destination-repository-name: 'RepoName'
+    #     user-email: some.email@gmail.com
+    #     target-branch: main

@@ -1,0 +1,133 @@
+{
+  "uid" : "2ca66e3bc8746f7f",
+  "name" : "Login with correct credential",
+  "fullName" : "Basic Auth in modal.Login with correct credential",
+  "historyId" : "9d114085f999218b736c29d2264ffc53",
+  "time" : {
+    "start" : 1627626149176,
+    "stop" : 1627626149822,
+    "duration" : 646
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-1"
+  }, {
+    "name" : "suite",
+    "value" : "Basic Auth in modal"
+  }, {
+    "name" : "testClass",
+    "value" : "Basic Auth in modal"
+  }, {
+    "name" : "testMethod",
+    "value" : "Login with correct credential"
+  }, {
+    "name" : "package",
+    "value" : "Basic Auth in modal"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "browser",
+    "value" : "chrome-92.0.4515.107"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 9,
+        "unknown" : 0,
+        "total" : 9
+      },
+      "items" : [ {
+        "uid" : "544d87dc9e3bc696",
+        "status" : "passed",
+        "time" : {
+          "start" : 1627625492801,
+          "stop" : 1627625493416,
+          "duration" : 615
+        }
+      }, {
+        "uid" : "1f42806c62d8e5c6",
+        "status" : "passed",
+        "time" : {
+          "start" : 1627624643483,
+          "stop" : 1627624643907,
+          "duration" : 424
+        }
+      }, {
+        "uid" : "fb7bf3356e4a4a16",
+        "status" : "passed",
+        "time" : {
+          "start" : 1627592186345,
+          "stop" : 1627592187030,
+          "duration" : 685
+        }
+      }, {
+        "uid" : "223485c05af4c614",
+        "status" : "passed",
+        "time" : {
+          "start" : 1627591188263,
+          "stop" : 1627591188846,
+          "duration" : 583
+        }
+      }, {
+        "uid" : "5262729a1ea070a6",
+        "status" : "passed",
+        "time" : {
+          "start" : 1627590811400,
+          "stop" : 1627590811722,
+          "duration" : 322
+        }
+      }, {
+        "uid" : "c5172dbbe59965a0",
+        "status" : "passed",
+        "time" : {
+          "start" : 1627590740962,
+          "stop" : 1627590741965,
+          "duration" : 1003
+        }
+      }, {
+        "uid" : "7717714829d3ecee",
+        "status" : "passed",
+        "time" : {
+          "start" : 1627590591287,
+          "stop" : 1627590591614,
+          "duration" : 327
+        }
+      }, {
+        "uid" : "1465d466b66fd753",
+        "status" : "passed",
+        "time" : {
+          "start" : 1627590349003,
+          "stop" : 1627590349649,
+          "duration" : 646
+        }
+      } ]
+    },
+    "tags" : [ ]
+  },
+  "source" : "2ca66e3bc8746f7f.json",
+  "parameterValues" : [ "chrome-92.0.4515.107" ]
+}

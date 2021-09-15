@@ -93,6 +93,7 @@ const wdioConfig = {
     //             () => reject(reportError),
     //             5000)
     //         exec('cp -R allure-report/history allure-results');
+    //         exec('cp -R allure-report/history allure-results');
     //         generation.on('exit', function(exitCode) {
     //             clearTimeout(generationTimeout)
 

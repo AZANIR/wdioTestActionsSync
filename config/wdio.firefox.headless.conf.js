@@ -3,7 +3,7 @@ const path = require("path");
 
 const firefoxHeadlessConfig = {  
     ...config,
-    services: [['selenium-standalone', { firefox: 'latest' }]], // https://github.com/mozilla/geckodriver/releases
+    services: [['selenium-standalone', {drivers: {firefox: '0.29.1'}}]], // https://github.com/mozilla/geckodriver/releases
     capabilities: [    
         {      
             maxInstances: 2,

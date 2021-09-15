@@ -2,7 +2,7 @@ const {config} = require("./wdio.conf");
 require("path");
 const chromeHeadlessConfig = {
     ...config,
-    services: [['selenium-standalone', { chromiumedge: 'latest' }]], // https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/
+    services: [['selenium-standalone', {drivers: {chromiumedge: '91.0.864.59'}}]], // https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/
     capabilities: [{
         maxInstances: 2,
         browserName: "MicrosoftEdge",

@@ -4,7 +4,7 @@ const {
 
 const chromeConfig = {
     ...config,
-    services: [['selenium-standalone', {chrome: 'latest'}]], // https://chromedriver.chromium.org/
+    services: [['selenium-standalone', {drivers: {chrome: '91.0.4472.101'}}]], // https://chromedriver.chromium.org/
     capabilities: [{
         maxInstances: 10,
         browserName: "chrome",

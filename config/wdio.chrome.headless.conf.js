@@ -2,7 +2,7 @@ const {config} = require("./wdio.conf");
 require("path");
 const chromeHeadlessConfig = {
     ...config,
-    services: [['selenium-standalone', {drivers: {chrome: '91.0.4472.101'}}]], // https://chromedriver.chromium.org/
+    services: [['selenium-standalone', {chrome: 'latest'}]], // https://chromedriver.chromium.org/
     capabilities: [{
         maxInstances: 2,
         browserName: "chrome",

@@ -1,0 +1,56 @@
+{
+  "uid" : "24c42efaeb936961",
+  "name" : "Check h3 header displayed",
+  "fullName" : "Check Add Remove elements page defaults.Check h3 header displayed",
+  "historyId" : "71d317bafa309d25c0185d682a0cdd0b",
+  "time" : {
+    "start" : 1631707711678,
+    "stop" : 1631707711845,
+    "duration" : 167
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-0"
+  }, {
+    "name" : "suite",
+    "value" : "Check Add Remove elements page defaults"
+  }, {
+    "name" : "testClass",
+    "value" : "Check Add Remove elements page defaults"
+  }, {
+    "name" : "testMethod",
+    "value" : "Check h3 header displayed"
+  }, {
+    "name" : "package",
+    "value" : "Check Add Remove elements page defaults"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "browser",
+    "value" : "chrome-93.0.4577.63"
+  } ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "24c42efaeb936961.json",
+  "parameterValues" : [ "chrome-93.0.4577.63" ]
+}

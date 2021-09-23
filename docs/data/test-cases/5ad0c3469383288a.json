@@ -1,0 +1,85 @@
+{
+  "uid" : "5ad0c3469383288a",
+  "name" : "Check h2 header displayed",
+  "fullName" : "Check login page defaults.Check h2 header displayed",
+  "historyId" : "cc29f7dfb7ae80c36df671274c464607",
+  "time" : {
+    "start" : 1632378933712,
+    "stop" : 1632378933783,
+    "duration" : 71
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-3"
+  }, {
+    "name" : "suite",
+    "value" : "Check login page defaults"
+  }, {
+    "name" : "testClass",
+    "value" : "Check login page defaults"
+  }, {
+    "name" : "testMethod",
+    "value" : "Check h2 header displayed"
+  }, {
+    "name" : "package",
+    "value" : "Check login page defaults"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "browser",
+    "value" : "chrome-93.0.4577.63"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ {
+      "uid" : "409c51ceee4e747f",
+      "status" : "passed",
+      "time" : {
+        "start" : 1631707714501,
+        "stop" : 1631707714579,
+        "duration" : 78
+      }
+    } ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 2,
+        "unknown" : 0,
+        "total" : 2
+      },
+      "items" : [ {
+        "uid" : "7486d7d2cca0e348",
+        "status" : "passed",
+        "time" : {
+          "start" : 1631707714501,
+          "stop" : 1631707714579,
+          "duration" : 78
+        }
+      } ]
+    },
+    "tags" : [ ]
+  },
+  "source" : "5ad0c3469383288a.json",
+  "parameterValues" : [ "chrome-93.0.4577.63" ]
+}

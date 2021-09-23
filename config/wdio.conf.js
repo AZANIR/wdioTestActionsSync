@@ -20,10 +20,10 @@ const wdioConfig = {
     ],
     maxInstances: 5,
     capabilities: [{
-        maxInstances: 2,
-        browserName: 'chrome',
-        acceptInsecureCerts: true
-    },
+            maxInstances: 2,
+            browserName: 'chrome',
+            acceptInsecureCerts: true
+        },
         {
             maxInstances: 2,
             browserName: 'firefox',
